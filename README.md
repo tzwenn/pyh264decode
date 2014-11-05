@@ -6,7 +6,7 @@ This is a small Python module to decode raw H.264 packets with external avcC ext
 
 It wraps ffmpeg's libavcodec and returns YUV420p frames, with the lineskip being the actual width of each frame.
 
-##Installing##
+## Installing
 
 This module is currently only tested with Python 2.7.
 You'll need ffmpeg (tested with 2.4.2) or libav with H.264 support installed.
@@ -17,7 +17,7 @@ $ sudo python setup.py install
 $ pydoc h264decode
 ```
 
-##Usage##
+## Usage
 
 ```python
 import h264decode
@@ -29,3 +29,6 @@ for frame in frameGenerator:
 	# e.g. rendering with pygame:
 	overlay.display((yuv.y, yuv.u, yuv.v))
 ```
+
+## License
+Code is under the [BSD 2 Clause (NetBSD) license](https://github.com/tzwenn/pyh264decode/tree/master/LICENSE.txt).
