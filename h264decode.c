@@ -16,7 +16,7 @@ extern PyTypeObject h264decode_YUVFrameType;
 PyMODINIT_FUNC inith264decode(void)
 {
     avcodec_register_all();
-    h264decoder_h264Codec = avcodec_find_decoder(CODEC_ID_H264);
+    h264decoder_h264Codec = avcodec_find_decoder(AV_CODEC_ID_H264);
 	if (!h264decoder_h264Codec) {
 		PyErr_SetString(PyExc_SystemError, "No H.264 codec found in this installation of libavcodec");
 		return;
