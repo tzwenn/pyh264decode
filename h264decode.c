@@ -1,6 +1,10 @@
 #include <Python.h>
 #include <libavcodec/avcodec.h>
 
+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,0,0)
+#define AV_CODEC_ID_H264 CODEC_ID_H264
+#endif
+
 AVCodec *h264decoder_h264Codec;
 
 static PyMethodDef h264decode_methods[] = {
@@ -13,6 +17,7 @@ extern PyTypeObject h264decode_YUVFrameType;
 #ifndef PyMODINIT_FUNC
 #define PyMODINIT_FUNC void
 #endif
+
 PyMODINIT_FUNC inith264decode(void)
 {
     avcodec_register_all();
