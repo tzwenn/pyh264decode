@@ -8,6 +8,6 @@ setup(
 	description = "Module for simple decoding of raw H264 streams with external avcC (ISO/IEC 14496:15)",
 	ext_modules = [Extension(	"h264decode",
 								sources=["yuvframe.c", "decoder.c", "h264decode.c"],
-								libraries=["avcodec"],
+								libraries=["avcodec", "avutil"],
 								library_dirs=["/usr/local/lib", "/usr/lib"])]
 )
